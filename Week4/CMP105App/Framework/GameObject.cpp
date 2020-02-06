@@ -3,6 +3,7 @@
 GameObject::GameObject()
 {
 	input = nullptr;
+	
 }
 
 GameObject::~GameObject()
