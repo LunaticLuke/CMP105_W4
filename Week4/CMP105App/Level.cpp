@@ -5,14 +5,15 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	window = hwnd;
 	input = in;
 	// initialise game objects
+	levelTexture.loadFromFile("gfx/Level1_1.png");
 	texture.loadFromFile("gfx/Mushroom.png");
 	playerObject.setWindow(window);
 	enemyObject1.setWindow(window);
 	enemyObject2.setWindow(window);
 	cursorObject.setWindow(window);
-	testSprite.setTexture(&texture);
-	testSprite.setSize(sf::Vector2f(100, 100));
-	testSprite.setPosition(100, 100);
+	testSprite.setTexture(&levelTexture);
+	testSprite.setSize(sf::Vector2f(11038, 675));
+	testSprite.setPosition(0, 0);
 	playerObject.setInput(input);
 	window->setMouseCursorVisible(false);
 	
@@ -48,7 +49,7 @@ void Level::render()
 {
 	beginDraw();
 
-	//window->draw(testSprite);
+	window->draw(testSprite);
 	window->draw(playerObject);
 	window->draw(enemyObject1);
 	window->draw(enemyObject2);
