@@ -34,4 +34,7 @@ private:
 	Enemy enemyObject1 = Enemy(40, "gfx/Kane.png",200,50);
 	Enemy enemyObject2 = Enemy(60, "gfx/edge.jpg", 300, 200);
 	Cursor cursorObject;
+	sf::View levelView;
+	float cameraSpeed = 300;
+	float xOffset;
 };
