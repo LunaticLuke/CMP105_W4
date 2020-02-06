@@ -7,6 +7,7 @@
 #include <string.h>
 #include <iostream>
 #include "Enemy.h"
+#include "Cursor.h"
 
 
 class Level{
@@ -31,4 +32,5 @@ private:
 	sf::Texture texture;
 	Enemy enemyObject1 = Enemy(40, "gfx/goomba.png",200,50);
 	Enemy enemyObject2 = Enemy(60, "gfx/edge.jpg", 300, 200);
+	Cursor cursorObject;
 };
