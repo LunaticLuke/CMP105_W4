@@ -4,14 +4,16 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 {
 	window = hwnd;
 	input = in;
-
 	// initialise game objects
 	texture.loadFromFile("gfx/Mushroom.png");
-
+	playerObject.setWindow(window);
 	testSprite.setTexture(&texture);
 	testSprite.setSize(sf::Vector2f(100, 100));
 	testSprite.setPosition(100, 100);
-
+	playerObject.setInput(input);
+	playerObject.setTexture(&texture);
+	playerObject.setSize(sf::Vector2f(150, 150));
+	playerObject.setPosition(200, 200);
 }
 
 Level::~Level()
@@ -27,7 +29,7 @@ void Level::handleInput(float dt)
 	{
 		window->close();
 	}
-
+	playerObject.handleInput(dt);
 }
 
 // Update game objects
@@ -42,7 +44,7 @@ void Level::render()
 	beginDraw();
 
 	window->draw(testSprite);
-
+	window->draw(playerObject);
 	endDraw();
 }
 
@@ -57,3 +59,4 @@ void Level::endDraw()
 {
 	window->display();
 }
+

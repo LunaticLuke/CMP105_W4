@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "Framework/Input.h"
 #include "Framework/GameObject.h"
+#include "Player.h"
 #include <string.h>
 #include <iostream>
 
@@ -15,7 +16,6 @@ public:
 	void handleInput(float dt);
 	void update(float dt);
 	void render();
-
 private:
 	// Default functions for rendering to the screen.
 	void beginDraw();
@@ -24,7 +24,7 @@ private:
 	// Default variables for level class.
 	sf::RenderWindow* window;
 	Input* input;
-
+	Player playerObject = Player(75);
 	// Level objects
 	GameObject testSprite;
 	sf::Texture texture;
